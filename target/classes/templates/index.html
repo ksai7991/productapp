@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Manager</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body style="background-color:#99ccff;">
+	<div class="header" align="center">
+		<h1 style="font-family: 'JetBrains Mono', monospace;">Product Manager</h1>
+		<a href="new" style="font-family: 'JetBrains Mono', monospace;">Create New Product</a> <br /> <br />
+		<table border="2" cellpadding="10" style="font-family: 'JetBrains Mono', monospace;" >
+			<thead>
+				<tr style="background-color:#99ccff;">
+					<th style="background-color:#ffff99;">Product Id</th>
+					<th style="background-color:#ffff99;">Name</th>
+					<th style="background-color:#ffff99;">Brand</th>
+					<th style="background-color:#ffff99;">Made In</th>
+					<th style="background-color:#ffff99;">Price</th>
+					<th style="background-color:#ffff99;">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="products:${listProducts}" style="background-color:#ffff99;">
+					<td th:text="${products.id}">Product Id</td>
+					<td th:text="${products.name}">Name</td>
+					<td th:text="${products.brand}">Brand</td>
+					<td th:text="${products.madein}">Made In</td>
+					<td th:text="${products.price}">Price</td>
+					<td><a th:href="@{/edit/{id}(id=${products.id})}">Edit</a>
+						&nbsp;&nbsp;&nbsp;&nbsp; <a
+						th:href="@{/delete/{id}(id=${products.id})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+</body>
+</html>
