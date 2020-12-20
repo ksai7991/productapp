@@ -8,9 +8,14 @@
 </head>
 <body style="background-color:#99ccff;">
 	<div class="header" align="center">
+	<h3 th:inline="text" style="font-family: 'JetBrains Mono', monospace;">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+	<form th:action="@{/logout}" method="post">
+	<input type="submit" value="Logout" style="background-color: #ffff99; font-family: 'JetBrains Mono', monospace;">
+	</form>
+	
 		<h1 style="font-family: 'JetBrains Mono', monospace;">Product Manager</h1>
 		<a href="new" style="font-family: 'JetBrains Mono', monospace;">Create New Product</a> <br /> <br />
-		<table border="2" cellpadding="10" style="font-family: 'JetBrains Mono', monospace;" >
+		<table border="2" cellpadding="10" style="background-color:#ffff99;font-family: 'JetBrains Mono', monospace;" >
 			<thead>
 				<tr style="background-color:#99ccff;">
 					<th style="background-color:#ffff99;">Product Id</th>

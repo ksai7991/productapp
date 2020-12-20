@@ -47,5 +47,9 @@ public class AppController{
 		service.delete(id);
 		return "redirect:/";
 	}
+	@GetMapping("/login")
+	public String getLoginpage() {
+		return "login";
+	}
 	
 }
