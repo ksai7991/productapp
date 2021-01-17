@@ -78,8 +78,16 @@ public class AppController{
 	}	
 	@RequestMapping(value="/saveuser", method = RequestMethod.POST)
 	public String saveUser(@ModelAttribute("user") Users user){
+		if(uservice.checkuser(user)) {
+			return "redirect:/signup?failure";
+		}else if(user.getUsername().isEmpty()||user.getPassword().isEmpty()) {
+			return "redirect:/signup?failed";
+		}
+		
+		else {
 		uservice.saveuser(user);
 		return "redirect:/login?success";
+		}
 		}
 
 

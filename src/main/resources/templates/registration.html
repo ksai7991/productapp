@@ -10,7 +10,10 @@
 	<div align="center">
 	<div th:if="${param.failure}" align="center">
 		<h3 style="font-family: 'JetBrains Mono', monospace;">Username already taken</h3>
-	</div>		
+	</div>
+	<div th:if="${param.failed}" align="center">
+		<h3 style="font-family: 'JetBrains Mono', monospace;">Username,Password shouldnt be null</h3>
+	</div>			
 		<form action="#" th:action="@{/saveuser}" th:object="${user}"
 			method="post">
 			<table border="2" cellpadding="10" style="font-family: 'JetBrains Mono', monospace;" >
@@ -28,5 +31,8 @@
 			</table>
 		</form>
 	</div>
+	<div align="center">
+<h4 style="font-family: 'JetBrains Mono', monospace;">Already Signedup?</h4><a href="login" style="font-family: 'JetBrains Mono', monospace;">Login Page</a> <br /> <br />
+	</div>	
 </body>
 </html>

@@ -32,5 +32,9 @@ public class Userservice {
     	return user1;
     }
     
+    
+    public boolean checkuser(Users user) {
+    	return repo.existsByUsername(user.getUsername());
+    }
 
 }
