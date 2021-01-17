@@ -9,6 +9,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name="products")
 public class Product {
+
+
+	private String uname;
+	public String getUname() {
+		return uname;
+	}
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
 	private Long id;
 	private String name;
 	private String brand;

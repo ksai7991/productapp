@@ -9,13 +9,15 @@ VALUES ('admin',
 'ROLE_ADMIN', 1);
 
 INSERT INTO `products`
-(`id`,
+(`uname`,
+`id`,
 `name`,
 `brand`,
 `madein`,
 `price`)
 VALUES
-(1,
+('admin',
+1,
 'pen',
 'reynolds' ,
 'india' ,

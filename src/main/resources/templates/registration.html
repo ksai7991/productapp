@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Product</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body style="background-color:#99ccff;">
+	<div align="center">
+	<div th:if="${param.failure}" align="center">
+		<h3 style="font-family: 'JetBrains Mono', monospace;">Username already taken</h3>
+	</div>		
+		<form action="#" th:action="@{/saveuser}" th:object="${user}"
+			method="post">
+			<table border="2" cellpadding="10" style="font-family: 'JetBrains Mono', monospace;" >
+				<tr style="background-color:#ffff99;">
+					<td>User Name:</td>
+					<td><input type="text" th:field="*{username}" cellpadding="10"  style="background-color:#cce6ff;font-family: 'JetBrains Mono', monospace;"/></td>
+				</tr>
+				<tr style="background-color:#ffff99;">
+					<td>Password</td>
+					<td><input type="password" th:field="*{password}" cellpadding="10" style="background-color:#cce6ff;font-family: 'JetBrains Mono', monospace;"/></td>
+				</tr>	
+				<tr style="background-color:#ffff99;">
+					<td colspan="2"><button type="submit" cellpadding="10" style="background-color:#cce6ff;font-family: 'JetBrains Mono', monospace;">Signup</button></td>
+				</tr>							
+			</table>
+		</form>
+	</div>
+</body>
+</html>
